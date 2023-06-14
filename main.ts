@@ -1,17 +1,17 @@
 function turnLeft () {
+    kitronik_klip_motor.motorOn(kitronik_klip_motor.Motors.Motor2, kitronik_klip_motor.MotorDirection.Forward, 125)
     kitronik_klip_motor.motorOn(kitronik_klip_motor.Motors.Motor1, kitronik_klip_motor.MotorDirection.Reverse, 100)
-    kitronik_klip_motor.motorOn(kitronik_klip_motor.Motors.Motor2, kitronik_klip_motor.MotorDirection.Reverse, 100)
 }
 input.onButtonPressed(Button.A, function () {
     driveForward()
     basic.pause(travelDistance)
-    turnRight()
+    turnLeft()
     basic.pause(turnTime)
-    driveForward()
+    driveforward2()
     basic.pause(travelDistance)
-    turnRight()
-    basic.pause(turnTime)
-    driveForward()
+    turnLeft()
+    basic.pause(turntime2)
+    driveforward2()
     basic.pause(travelDistance)
     turnRight()
     basic.pause(turnTime)
@@ -31,7 +31,13 @@ function Stop () {
     kitronik_klip_motor.motorOff(kitronik_klip_motor.Motors.Motor1)
     kitronik_klip_motor.motorOff(kitronik_klip_motor.Motors.Motor2)
 }
+function driveforward2 () {
+    kitronik_klip_motor.motorOn(kitronik_klip_motor.Motors.Motor1, kitronik_klip_motor.MotorDirection.Forward, 115)
+    kitronik_klip_motor.motorOn(kitronik_klip_motor.Motors.Motor2, kitronik_klip_motor.MotorDirection.Forward, 115)
+}
+let turntime2 = 0
 let turnTime = 0
 let travelDistance = 0
-travelDistance = 1500
-turnTime = 500
+travelDistance = 3700
+turnTime = 470
+turntime2 = 50
