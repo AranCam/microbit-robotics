@@ -11,12 +11,10 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(travelDistance)
     turnLeft()
     basic.pause(turntime2)
-    driveforward2()
-    basic.pause(travelDistance)
     turnRight()
     basic.pause(turnTime)
-    driveForward()
-    basic.pause(travelDistance)
+    driveforward2()
+    basic.pause(traveldistance3)
     Stop()
 })
 function turnRight () {
@@ -38,6 +36,9 @@ function driveforward2 () {
 let turntime2 = 0
 let turnTime = 0
 let travelDistance = 0
+let traveldistance3 = 0
+traveldistance3 = 1000
+let traveldistance2 = 2000
 travelDistance = 3700
 turnTime = 470
-turntime2 = 50
+turntime2 = 150
